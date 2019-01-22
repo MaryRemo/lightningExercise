@@ -11,18 +11,25 @@
 const time = () => {
         let date = new Date(); 
         
+        let dateOutput = document.getElementById("output")
+        
+        let p = document.createElement("p");
+        p.textContent = date;
+        
+        dateOutput.appendChild(p);
+
         let timeButton = document.createElement("button");
         timeButton.textContent = "Add Time";
         timeButton.setAttribute("class", "updateTime");
         
+        dateOutput.appendChild(timeButton);
+        dateOutput.appendChild(p);
+        
         timeButton.addEventListener("click", ()=> {
-            formArticle.textContent="";
+            dateOutput.textContent="";
             time();
         });
         
-        let formArticle = document.querySelector(".output")
-        formArticle.appendChild(timeButton);
-        formArticle.appendChild(date);
   
 }
 // let myTime = document.createElement("TIME");
